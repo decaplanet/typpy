@@ -1,0 +1,41 @@
+// "-->" syntax is used for each chunk.
+
+
+// A chunk type description "@song_info".
+// A type can be optional if you put `?`
+#_type(chunk)
+@song_info:
+--> name: String
+    artist: String[]
+    released_year: Int?
+
+
+// A chunk `song_list` conforms a chunk type "any array of `@song_info`"
+// `[]` is used for every array type value except for an array of chunks.
+#_chunk
+song_list @song_info[]:
+--> name: "Bad Reputation"
+    artist: [
+        "Avicii"
+        "Joe Janiak"
+    ]
+    released_year: 2019
+--> name: "Everything Goes On"
+    artist: ["Porter Robinson"]
+    released_year: 2022
+--> name: "All We Know"
+    artist: [
+        "The Chainsmokers"
+        "Phoebe Ryan"
+    ]
+
+// A chunk `single_song` conforms a chunk type `@song_info`.
+// `[]` is used for every array type value except for an array of chunks.
+#_chunk
+single_song @song_info:
+--> name: "All We Know"
+    artist: [
+        "The Chainsmokers"
+        "Phoebe Ryan"
+    ]
+    released_year: 2016

@@ -1,0 +1,33 @@
+// "-->" syntax is used for each chunk.
+
+
+// A chunk type description "@top".
+#_type(chunk)
+@top:
+--> document_name: String
+    document_author: String
+
+// A chunk type description "@song_info".
+// A type can be optional if you put `?`
+#_type(chunk)
+@song_info:
+--> name: String
+    artist: String[]
+    released_year: Int?
+
+
+// You can omit a chunk name when the name of the chunk is `@top`.
+#_chunk
+@top:
+--> document_name: "My Favorite Song"
+    document_author: "decaplanet"
+
+// A chunk `favorite_song` conforms a chunk type `@song_info`.
+#_chunk
+favorite_song @song_info:
+--> name: "Shelter"
+    artist: [
+        "Porter Robinson"
+        "Madeon"
+    ]
+    released_year: 2016

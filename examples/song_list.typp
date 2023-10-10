@@ -1,0 +1,32 @@
+#_type(chunk)
+@song_info:
+--> name: String
+    artist: String[]
+    released_year: Int?
+
+
+#_chunk
+song_list @song_info[]:
+--> name: "Bad Reputation"
+    artist: [
+        "Avicii"
+        "Joe Janiak"
+    ]
+    released_year: 2019
+--> name: "Everything Goes On"
+    artist: ["Porter Robinson"]
+    released_year: 2022
+--> name: "All We Know"
+    artist: [
+        "The Chainsmokers"
+        "Phoebe Ryan"
+    ]
+
+#_chunk
+single_song @song_info:
+--> name: "All We Know"
+    artist: [
+        "The Chainsmokers"
+        "Phoebe Ryan"
+    ]
+    released_year: 2016

@@ -1,0 +1,25 @@
+#_type(chunk)
+@employee:
+--> name: String
+    remote: Boolean
+
+#_type(chunk)
+@department
+--> name: String
+    employees: @employee[]
+
+
+#_chunk
+departments @department[]:
+--> name: "Human Resources"
+    employees:
+    --> name: "Olivia Smith"
+        remote: false
+    --> name: "William Wilson"
+        remote: true
+--> name: "Marketing"
+    employees:
+    --> name: "Ethan Turner"
+        remote: false
+    --> name: "Grace Hill"
+        remote: true

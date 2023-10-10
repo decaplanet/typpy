@@ -1,0 +1,25 @@
+#_type(chunk)
+@main:
+--> document_name: String
+    document_author: String
+
+#_type(chunk)
+@song_info:
+--> name: String
+    artist: String[]
+    released_year: Int?
+
+
+#_chunk
+@main:
+--> document_name: "My Favorite Song"
+    document_author: "decaplanet"
+
+#_chunk
+favorite_song @song_info:
+--> name: "Shelter"
+    artist: [
+        "Porter Robinson"
+        "Madeon"
+    ]
+    released_year: 2016

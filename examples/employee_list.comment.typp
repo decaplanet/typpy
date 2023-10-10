@@ -1,0 +1,31 @@
+// "-->" syntax is used for each chunk.
+
+
+// A chunk type description "@employee".
+#_type(chunk)
+@employee:
+--> name: String
+    remote: Boolean
+
+// A chunk type description "@department".
+#_type(chunk)
+@department
+--> name: String
+    employees: @employee[]
+
+
+// A chunk `departments` conforms a chunk type `@department`.
+#_chunk
+departments @department[]:
+--> name: "Human Resources"
+    employees:
+    --> name: "Olivia Smith"
+        remote: false
+    --> name: "William Wilson"
+        remote: true
+--> name: "Marketing"
+    employees:
+    --> name: "Ethan Turner"
+        remote: false
+    --> name: "Grace Hill"
+        remote: true
