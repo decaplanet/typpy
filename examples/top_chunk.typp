@@ -1,5 +1,5 @@
 #_type(chunk)
-@main:
+@top:
 --> document_name: String
     document_author: String
 
@@ -11,7 +11,7 @@
 
 
 #_chunk
-@main:
+@top:
 --> document_name: "My Favorite Song"
     document_author: "decaplanet"
 
