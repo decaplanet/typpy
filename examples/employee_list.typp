@@ -4,7 +4,7 @@
     remote: Boolean
 
 #_type(chunk)
-@department
+@department:
 --> name: String
     employees: @employee[]
 

@@ -9,7 +9,7 @@
 
 // A chunk type description "@department".
 #_type(chunk)
-@department
+@department:
 --> name: String
     employees: @employee[]
 
